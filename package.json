@@ -1,0 +1,68 @@
+{
+  "name": "br-bank-validator",
+  "version": "0.0.1",
+  "description": "Brazilian Bank Validator",
+  "repository": "git://github.com/fintta/br-bank-validator",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Pedro Cavalcante",
+    "email": "pedro@fintta.com"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "test": "jest",
+    "coverage": "npm test -- --coverage",
+    "postcoverage": "open-cli coverage/lcov-report/index.html",
+    "lint": "eslint .",
+    "docs": "documentation readme src --section=API",
+    "postdocs": "git add README.md",
+    "clean": "rimraf dist",
+    "dev": "babel -w src -d dist -v",
+    "prebuild": "npm run docs && npm run clean",
+    "build": "babel src -d dist",
+    "prerelease": "npm run lint && npm test && npm run build",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "bluebird": "3.7.2",
+    "request": "2.88.0",
+    "request-promise": "4.2.5",
+    "slugify": "1.4.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/preset-env": "7.4.5",
+    "babel-eslint": "10.0.2",
+    "babel-jest": "24.8.0",
+    "documentation": "11.0.1",
+    "eslint": "6.0.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "5.0.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-prettier": "3.1.0",
+    "husky": "2.4.1",
+    "jest": "24.8.0",
+    "lint-staged": "8.2.1",
+    "nock": "12.0.3",
+    "open-cli": "5.0.0",
+    "prettier": "1.18.2",
+    "rimraf": "2.6.3",
+    "standard-version": "6.0.1"
+  }
+}
