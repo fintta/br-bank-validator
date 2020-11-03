@@ -10,7 +10,7 @@ const branchNumber = branchNumberGenerator();
 const accountNumberCheckDigit = accountNumberCheckDigitGenerator();
 const branchNumberCheckDigit = branchNumberCheckDigitGenerator();
 
-export {
+export default {
   accountNumberCheckDigit,
   branchNumberCheckDigit,
   accountNumber,
