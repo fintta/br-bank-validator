@@ -10,3 +10,5 @@ Validate Brazilian bank information.
 $ npm run dev
 ```
 
+## API
+
