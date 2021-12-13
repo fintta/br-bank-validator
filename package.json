@@ -1,6 +1,6 @@
 {
-  "name": "br-bank-validator",
-  "version": "0.0.2",
+  "name": "@fintta/br-bank-validator",
+  "version": "0.0.3",
   "description": "Brazilian Bank Validator",
   "repository": "git://github.com/fintta/br-bank-validator",
   "main": "dist/index.js",
